@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:r="clr-namespace:Recorder.ResX"
+             xmlns:dotm="clr-namespace:dotMorten.Xamarin.Forms;assembly=dotMorten.Xamarin.Forms.AutoSuggestBox"
+             x:Class="Recorder.Views.SuggestUserEntryView">
+
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label" BasedOn="{StaticResource BodyTextStyle}"/>
+        </ResourceDictionary>
+    </ContentView.Resources>    
+
+    <StackLayout Orientation="Vertical" Margin="20">
+
+        <Label Text="{x:Static r:AppResources.StartTypingLabelText}"/>
+        <dotm:AutoSuggestBox x:Name="suggestBox"
+                             TextColor="{StaticResource NormalTextColor}"/>
+
+        <Label Text="{Binding OtherEntryLabel}"/>
+        <Entry x:Name="otherEntry"/>
+
+    </StackLayout>
+</ContentView>

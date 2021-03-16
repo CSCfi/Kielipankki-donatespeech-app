@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:app="clr-namespace:Recorder"
+             xmlns:effects="clr-namespace:Recorder.Effects"
+             xmlns:resources="clr-namespace:Recorder.ResX"
+             x:Class="Recorder.OnboardingPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="LogoStyle" TargetType="Image">
+                <Setter Property="WidthRequest">
+                    <Setter.Value>
+                        <app:ResponsiveStyleProp x:TypeArguments="x:Double"
+                                                 Normal="100" Medium="150" Large="200" />
+                    </Setter.Value>
+                </Setter>
+
+                <Setter Property="Margin">
+                    <Setter.Value>
+                        <app:ResponsiveStyleProp x:TypeArguments="Thickness"
+                                                 Normal="0,24,0,12" Medium="0,30,0,15" Large="0,40,0,20" />
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="OnboardingTitleStyle" TargetType="Label" BaseResourceKey="PageTitleStyle">
+                <Setter Property="TextColor" Value="{StaticResource SecondColor}" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout Orientation="Vertical"
+                 VerticalOptions="FillAndExpand"
+                 HorizontalOptions="FillAndExpand"
+                 Spacing="0">
+
+        <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0,0,0,118">
+            <StackLayout Orientation="Vertical" HorizontalOptions="Center" Margin="24,0" WidthRequest="330" effects:SafeAreaInsetEffect.Insets="Top,Bottom">
+                <Image Source="logo" Style="{StaticResource LogoStyle}" />
+
+                <Label x:Name="TitleLabel"
+                       Text="{x:Static resources:AppResources.OnboardingTitle}"
+                       Style="{StaticResource OnboardingTitleStyle}" />
+
+                <Label x:Name="Body1Label"
+                       Style="{StaticResource BodyTextStyle}"
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center" Margin="0,12"
+                       Text="{x:Static resources:AppResources.OnboardingBody}" />
+            </StackLayout>
+        </ScrollView>
+
+        <StackLayout Orientation="Horizontal"
+                     Spacing="0"
+                     InputTransparent="True"
+                     CascadeInputTransparent="False"
+                     IsVisible="{Binding ShowRecordButton}"
+                     Margin="0,-118,0,0">
+
+            <Image Source="bottombar_flex"
+                   HeightRequest="1"
+                   HorizontalOptions="FillAndExpand"
+                   WidthRequest="1"
+                   VerticalOptions="FillAndExpand"
+                   InputTransparent="True"
+                   AutomationProperties.IsInAccessibleTree="False"/>
+
+            <Image Source="bottombar_left"
+                   HeightRequest="1"
+                   HorizontalOptions="Fill"
+                   WidthRequest="60"
+                   VerticalOptions="FillAndExpand"
+                   InputTransparent="True"
+                   AutomationProperties.IsInAccessibleTree="False"/>
+
+            <AbsoluteLayout VerticalOptions="Fill" HorizontalOptions="Fill">
+                <StackLayout Orientation="Horizontal" Spacing="0" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                    <Image Source="bottombar_notch_left"
+                           HeightRequest="1"
+                           WidthRequest="60"
+                           VerticalOptions="FillAndExpand"
+                           InputTransparent="True"
+                           AutomationProperties.IsInAccessibleTree="False"/>
+                    <Image Source="bottombar_notch_flex"
+                           HeightRequest="1"
+                           VerticalOptions="FillAndExpand"
+                           HorizontalOptions="FillAndExpand"
+                           MinimumHeightRequest="1"
+                           AutomationProperties.IsInAccessibleTree="False"/>
+                    <Image Source="bottombar_notch_right"
+                           HeightRequest="1"
+                           WidthRequest="60"
+                           VerticalOptions="FillAndExpand"
+                           InputTransparent="True"
+                           AutomationProperties.IsInAccessibleTree="False"/>
+                </StackLayout>
+
+                <ContentView AbsoluteLayout.LayoutBounds="0,36,1,-1"
+                             AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"
+                             Padding="5,0,5,4"
+                             effects:SafeAreaInsetEffect.Insets="Bottom">
+
+                    <Button Style="{StaticResource textButtonStyle}"
+                            TextColor="{StaticResource FirstColor}"
+                            FontSize="Large"
+                            Text="JATKA"
+                            Clicked="ContinueButton_Clicked"
+                            ImageSource="arrow_down"
+                            ContentLayout="Bottom, 8"
+                            AutomationId="OnboardingContinueButton"
+                            Padding="0"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Start" />
+
+                </ContentView>
+            </AbsoluteLayout>
+
+            <Image Source="bottombar_right"
+                   HeightRequest="1"
+                   HorizontalOptions="Fill"
+                   WidthRequest="60"
+                   VerticalOptions="FillAndExpand"
+                   InputTransparent="True"
+                   AutomationProperties.IsInAccessibleTree="False" />
+            <Image Source="bottombar_flex"
+                   HeightRequest="1"
+                   HorizontalOptions="FillAndExpand"
+                   WidthRequest="1"
+                   VerticalOptions="FillAndExpand"
+                   InputTransparent="True"
+                   AutomationProperties.IsInAccessibleTree="False" />
+
+        </StackLayout>
+
+    </StackLayout>
+</ContentPage>

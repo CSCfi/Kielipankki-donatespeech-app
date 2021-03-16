@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:app="clr-namespace:Recorder"
+             mc:Ignorable="d"
+             x:Class="Recorder.App">
+
+    <Application.Resources>
+        <!-- brand colors -->        
+        <Color x:Key="FirstColor">#323232</Color>   
+        <Color x:Key="SecondColor">#969696</Color>
+        <Color x:Key="ThirdColor">#F0F0F0</Color> 
+
+        <!-- on top of brand colors -->
+        <Color x:Key="OnFirstColor">#FFFFFF</Color> 
+        <Color x:Key="OnSecondColor">#FFFFFF</Color> 
+
+        <!-- other colors -->
+        <Color x:Key="NormalTextColor">#000000</Color>
+        <Color x:Key="AppBackgroundColor">#F0F0F0</Color>
+        <Color x:Key="NavigationBarBackgroundColor">#FFFFFF</Color>
+        <Color x:Key="BodyTextColor">#000000</Color>
+        <Color x:Key="InverseBodyTextColor">#FFFFFF</Color>
+        <Color x:Key="ThemeImageBorderColor">#F0F0F0</Color>
+        <Color x:Key="RecordedMinutesTextColor">#F0F0F0</Color>
+
+        <!-- implicit default style for Buttons -->
+        <Style TargetType="Button">
+            <Setter Property="TextColor" Value="{StaticResource OnSecondColor}" />
+            <Setter Property="BackgroundColor" Value="{StaticResource SecondColor}" />
+            <Setter Property="BorderColor" Value="{StaticResource SecondColor}" />
+            <Setter Property="Padding" Value="8,10,8,8" />
+            <Setter Property="CornerRadius" Value="22" />
+            <Setter Property="BorderWidth" Value="1" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="FontSize" Value="Body" />
+        </Style>
+
+        <!-- Text only button without background, overrides properties from default style -->
+        <Style x:Key="textButtonStyle" TargetType="Button">
+            <Setter Property="TextColor" Value="{StaticResource SecondColor}" />
+            <Setter Property="BackgroundColor" Value="Transparent" />
+            <Setter Property="BorderWidth" Value="0" />
+        </Style>
+
+        <Style x:Key="outlineButtonStyle" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="Transparent" />
+            <Setter Property="BorderColor" Value="{StaticResource SecondColor}" />
+            <Setter Property="BorderWidth" Value="4" />
+            <Setter Property="TextColor" Value="{StaticResource SecondColor}" />
+        </Style>
+
+        <Style x:Key="recordButtonStyle" TargetType="Button">
+            <Setter Property="FontSize" Value="Small" />
+            <Setter Property="TextColor" Value="{StaticResource OnSecondColor}" />
+            <Setter Property="BackgroundColor" Value="{StaticResource SecondColor}" />
+            <Setter Property="BorderColor" Value="{StaticResource SecondColor}" />
+        </Style>
+
+        <Style x:Key="recordButtonRecordingStyle" TargetType="Button" BaseResourceKey="recordButtonStyle">
+            <Setter Property="TextColor" Value="{StaticResource OnFirstColor}" />
+            <Setter Property="BackgroundColor" Value="{StaticResource FirstColor}" />
+            <Setter Property="BorderColor" Value="{StaticResource FirstColor}" />
+        </Style>
+
+        <!-- default for ImageButtons -->
+        <Style TargetType="ImageButton">
+            <Setter Property="BackgroundColor" Value="Transparent" />
+        </Style>
+
+        <Style TargetType="{x:Type ContentPage}"
+               ApplyToDerivedTypes="True">
+            <Setter Property="BackgroundColor"
+                    Value="{StaticResource AppBackgroundColor}" />
+
+            <Setter Property="NavigationPage.HasNavigationBar"
+                    Value="False" />
+        </Style>
+
+        <Style TargetType="{x:Type Label}">
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+        </Style>
+
+        <Style x:Key="PageTitleStyle" TargetType="Label">
+            <Setter Property="TextColor" Value="{StaticResource FirstColor}" />
+            <Setter Property="FontSize" Value="Title" />
+            <Setter Property="LineHeight" Value="1.1" />
+        </Style>
+
+        <Style x:Key="BodyTextStyle" TargetType="Label">
+            <Setter Property="TextColor" Value="{StaticResource NormalTextColor}" />
+            <Setter Property="FontSize" Value="Body" />
+            <Setter Property="LineHeight" Value="1.15" />
+        </Style>
+
+        <Style TargetType="Label" x:Key="InlineLinkLabel" BaseResourceKey="BodyTextStyle">
+            <Setter Property="TextDecorations" Value="Underline" />
+        </Style>
+
+        <!-- recorded time next to record button -->
+        <Style x:Key="InfoLabelStyle" TargetType="Label">
+            <Setter Property="TextColor" Value="{StaticResource SecondColor}" />
+            <Setter Property="FontSize">
+                <Setter.Value>
+                    <app:PlatformFontSize iOS="Medium" Android="16.0"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="AccentLabelStyle" TargetType="Label" BasedOn="{StaticResource InfoLabelStyle}">
+            <Setter Property="TextColor" Value="{StaticResource FirstColor}" />
+        </Style>
+
+        <Style x:Key="InverseAccentLabelStyle" TargetType="Label" BasedOn="{StaticResource AccentLabelStyle}">
+            <Setter Property="TextColor" Value="{StaticResource OnFirstColor}" />
+            <Setter Property="BackgroundColor" Value="{StaticResource FirstColor}" />
+        </Style>
+
+        <Style x:Key="TextScheduleItemLabelStyle" TargetType="Label" BasedOn="{StaticResource InverseAccentLabelStyle}">
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+            <Setter Property="FontSize" Value="Title" />
+        </Style>
+
+        <Style x:Key="ClipBorderFrame" TargetType="Frame">
+            <Setter Property="HasShadow" Value="False"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="BackgroundColor" Value="Transparent"/>
+            <Setter Property="IsClippedToBounds" Value="True"/>
+        </Style>
+
+    </Application.Resources>
+</Application>

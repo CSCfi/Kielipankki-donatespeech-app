@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    
+    <data name="PromptMetaTitle"><value>Auta tutkijaa</value></data>
+    <data name="MediaMetaTitle"><value>Lahjoitus {0}/{1}</value></data>
+    <data name="NonRecordingMediaMetaTitle"><value>Katso tai kuuntele</value></data>
+    
+    <data name="ThemesPageTitleText"><value>Pulistaan meille parempia palveluja!</value></data>
+    <data name="ThemesPageBody1Text"><value>Valitse aihe, josta haluat puhua. Palvelu opastaa sinua eteenpäin.</value></data>
+    
+    <data name="StartButtonText"><value>Aloita</value></data>    
+    <data name="StartRecording"><value>Äänitä</value></data>
+    <data name="StopRecording"><value>Lopeta äänitys</value></data>
+    <data name="ContinueSchedule"><value>Jatka</value></data>
+    <data name="SkipScheduleItem"><value>Ohita</value></data>
+    <data name="RetryScheduleItem"><value>Kokeile uudelleen</value></data>
+    
+    <data name="RecordingFinishTitle"><value>Hyvin kerrottu, paljon kiitoksia!</value></data>
+    
+    <data name="DetailsButtonText"><value>Lisätietoa</value></data>
+    <data name="CloseButtonText"><value>Sulje</value></data>
+    <data name="ExitButtonText"><value>Poistu</value></data>
+    <data name="DonatedLabelText"><value>OLET LAHJOITTANUT</value></data>
+    
+    <data name="ChooseOptionText"><value>Valitse vaihtoehto:</value></data>
+    <data name="PrimaryNativeLanguageLabelText"><value>Ensimmäinen äidinkieli:</value></data>
+    <data name="SecondaryNativeLanguageLabelText"><value>Toinen äidinkieli:</value></data>
+    
+    <data name="ReadMoreLinkLabelText"><value>Lue lisää tietosuojasta.</value></data>
+    <data name="PrivacyPolicyUrl"><value>https://example.com</value></data>
+    
+    <data name="InviteFriendButtonText"><value>Kerro kaverille</value></data>
+    <data name="DonateMoreButtonText"><value>Lahjoita lisää</value></data>
+    
+    <data name="NextButtonText"><value>Seuraava</value></data>
+    <data name="TryAgainButtonText"><value>Kokeile uudelleen</value></data>
+    
+    <data name="LoadFailedAlertTitle"><value>Virhe</value></data>
+    <data name="LoadFailedAlertMessage"><value>Sisällön lataus ei onnistunut. Tarkista verkkoyhteys ja yritä uudelleen painamalla Jatka.</value></data>
+    <data name="LoadFailedAlertContinue"><value>Jatka</value></data>
+    <data name="LoadFailedAlertCancel"><value>Poistu</value></data>
+    
+    <data name="StartTypingLabelText"><value>Kirjoita muutama kirjain nimen alusta ja valitse sitten listalta:</value></data>
+    
+    <data name="InviteFriendTitle"><value>Kerro kaverille</value></data>    
+    <data name="InviteFriendTemplate"><value>Lahjoitin puhettani {0} minuuttia. Lahjoita sinäkin! #hashtag https://example.com</value></data>
+    <data name="InviteFriendNewbieTemplate"><value>Lahjoitin juuri puhettani. Lahjoita sinäkin! #hashtag https://example.com</value></data>
+    
+    <data name="OnboardingTitle"><value>Onboarding-otsikko</value></data>
+    <data name="OnboardingBody"><value>Onboarding-teksti, jossa kerrotaan mistä tässä on kysymys.
+
+Tähän elementtiin laitetut rivinvaihdot näkyvät lopputuloksessa.
+
+Tämä on onboarding-tekstin kolmas rivi.</value></data>
+    
+    <data name="DetailsGeneralTitle"><value>Lisätietosivun otsikko</value></data>
+    <data name="DetailsGeneralBody"><value>Lisätietosivu, jolla kerrotaan lisää tietoa aiheesta.
+
+Tähän elementtiin laitetut rivinvaihdot näkyvät lopputuloksessa.
+
+Sovellusta ei ole tarkoitettu yhteiskäyttöön, vaan jokaisen käyttäjän tulee käyttää omaa laitettaan. Tämä mahdollistaa sen, että jokainen voi itse hyväksyä nämä tiedot ja tarvittaessa myös poistaa äänitteensä laitekohtaisen tunnisteen perusteella. Tunniste löytyy tämän sivun alalaidasta.</value></data>
+    <data name="DetailsGeneralLinkTitle"><value>Lue lisää hankkeen nettisivuilta</value></data>
+
+    <data name="DetailsPrivacyTitle"><value>Tietosuojasi on meille tärkeää</value></data>
+    <data name="DetailsPrivacyBody"><value>Tässä on paikka tietosuoja-asioita käsittelevälle tekstille.
+
+Tähän elementtiin laitetut rivinvaihdot näkyvät lopputuloksessa.
+
+Tämä on tietosuojaa käsittelevän teksti kolmas kappale.</value></data>
+    <data name="DetailsPrivacyLinkTitle"><value>Lue lisää tietosuojasta</value></data>
+
+    <data name="DetailsRemoveTitle"><value>Äänitteiden poistaminen</value></data>
+    <data name="DetailsRemoveBody1"><value>Ota talteen tämä tunniste, jotta voit halutessasi perua tällä sovelluksen asennuksella tehdyt lahjoitukset. Poistaaksesi lahjoituksesi sinun tulee lähettää tunniste osoitteeseen </value></data>
+    <data name="DetailsRemoveEmail"><value>your-feedback-email</value></data>
+    <data name="DetailsRemoveEmailLink"><value>your-feedback-email</value></data>
+    <data name="DetailsRemoveBody2"><value> ja kertoa, että haluat poistaa kaikki lahjoituksesi hankkeen ylläpitäjän tietokannasta.  
+
+Jos poistat sovelluksen ja asennat sen uudestaan, sinun täytyy ottaa talteen uusi tunniste. Näet sovelluksesta ainoastaan nykyisen tunnisteen, et edellisiä. Käyttäessäsi palvelua selaimessa täytyy sinun ottaa talteen selainkohtainen tunnisteesi.
+
+Tämän sovelluksen asennuskohtainen tunnisteesi on:</value></data>
+    <data name="DetailsRemoveButtonTitle"><value>KOPIOI TUNNISTE</value></data>
+    <data name="DetailsRemoveButtonClickedTitle"><value>KOPIOITU</value></data>
+    <data name="DetailsRemoveButtonMessage"><value>Muista tallentaa kopiomasi tunniste!</value></data>
+    
+    <data name="PermissionRationaleTitle"><value>Lupa äänittää</value></data>
+    <data name="PermissionRationaleMessage"><value>Sovellus tarvitsee luvan käyttää laitteesi mikrofonia jotta puheesi voidaan äänittää lahjoitusta varten.</value></data>
+    <data name="PermissionRationaleDismiss"><value>OK</value></data>
+    
+    <data name="PermissionDeniedTitle"><value>Äänitys estetty</value></data>
+    <data name="PermissionDeniedMessage"><value>Valitettavasti sovelluksen lupa äänittää on estetty. Voit korjata tilanteen antamalla luvan laitteen asetuksista.</value></data>
+    <data name="PermissionDeniedDismiss"><value>OK</value></data>
+
+    <data name="NoChoiceOption"><value>Ei valintaa</value></data>
+    
+    <data name="TermsHelloTitle"><value>Kiitos, kun tulit.</value></data>
+    <data name="TermsHelloBody"><value>Lue ensin nämä perustiedot hankkeesta. Sen jälkeen voit valita sinua kiinnostavan aihepiirin ja lahjoittaa puhettasi.</value></data>
+
+    <data name="TermsGeneralTitle"><value>Käyttöehtosivun otsikko</value></data>
+    <data name="TermsGeneralBody"><value>Tälle sivulle tulee tietoa palvelun käyttöehdoista.
+    
+Tähän elementtiin laitetut rivinvaihdot näkyvät lopputuloksessa.
+
+Tämä on käyttöehtosivun kolmas kappale.</value></data>
+    <data name="TermsGeneralLink"><value>Lisätietoja kampanjasta</value></data>
+    <data name="TermsGeneralUrl"><value>https://example.com</value></data>
+
+    <data name="TermsOwnershipTitle"><value>Kuka?</value></data>
+    <data name="TermsOwnershipBody1"><value>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae libero nec massa sollicitudin lobortis. Nulla facilisi. Aenean quis aliquam erat. Aliquam ac egestas augue. Sed sed scelerisque massa, a sodales nunc. Nulla nec felis ipsum. In hac habitasse platea dictumst. Curabitur eu congue neque </value></data>
+    <data name="TermsOwnershipLink"><value>Tietosuoja</value></data>
+    <data name="TermsOwnershipLinkUrl"><value>https://example.com/tietosuoja</value></data>
+    <data name="TermsOwnershipBody2"><value> -sivulla esitettyjä periaatteita noudattaen.</value></data>
+
+    <data name="TermsVoluntaryTitle"><value>Täysin vapaaehtoista!</value></data>
+    <data name="TermsVoluntaryBody"><value>Puheen lahjoittaminen ja henkilötietojen ilmoittaminen on täysin vapaaehtoista.</value></data>
+
+    <data name="TermsPrivacyTitle"><value>Miten henkilötietoja käsitellään?</value></data>
+    <data name="TermsPrivacyBody"><value>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris maximus quis elit sit amet ornare. Nam dui arcu, ornare quis diam ac, commodo aliquam quam.</value></data>
+    <data name="TermsPrivacyLink"><value>Lisätietoa henkilötietojen käsittelystä</value></data>
+    <data name="TermsPrivacyUrl"><value>https://example.com/tietosuoja</value></data>
+
+    <data name="TermsRightsTitle"><value>Oikeudet puheeseen</value></data>
+    <data name="TermsRightsBody"><value>Curabitur dignissim hendrerit luctus. Maecenas ut ex pellentesque, feugiat nulla non, pretium ante. Quisque nisi nibh, cursus id felis at, scelerisque convallis augue. Nam in sapien eu dui maximus blandit. 
+
+Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin porta quis lectus in efficitur. Vivamus feugiat, nulla nec congue fermentum, mauris massa luctus risus, eu semper diam sapien non turpis. Nullam ac risus iaculis, tincidunt est ut, bibendum urna.</value></data>
+
+    <data name="TermsAppropriateUseTitle"><value>Sovelluksen käyttäminen</value></data>
+    <data name="TermsAppropriateUseBody"><value>Tämä sovellus ei ole tarkoitettu yhteiskäyttöön. Kaikkien lahjoittajien tulee käyttää lahjoittaessaan omaa laitettaan.</value></data>
+
+    <data name="TermsAdditionalTitle"><value>Lisätietoa</value></data>
+    <data name="TermsAdditionalWebsite"><value>Kampanjan sivusto: </value></data>
+    <data name="TermsAdditionalWebsiteLink"><value>example.com</value></data>
+    <data name="TermsAdditionalWebsiteUrl"><value>https://example.com</value></data>
+    <data name="TermsAdditionalContact"><value>Helsingin yliopisto, Kielipankki</value></data>
+    <data name="TermsAdditionalLink"><value>www.kielipankki.fi</value></data>   
+    <data name="TermsAdditionalUrl"><value>https://www.kielipankki.fi</value></data>   
+    <data name="TermsAdditionalEmail"><value>hankkeen-nimi@kielipankki.fi</value></data>   
+    
+    <data name="TermsAcceptBody"><value>Painamalla alla olevaa Hyväksyn-nappia hyväksyn edellä olevat puheen lahjoittamisen ehdot. Jos olen alle 18-vuotias, huoltajani hyväksyy ehdot puolestani.</value></data>
+    <data name="TermsAccept"><value>Hyväksyn</value></data>
+
+    <data name="RecordingStoppedLimitTitle"><value>Äänitys keskeytetty</value></data>
+    <data name="RecordingStoppedLimitMessage"><value>Äänityksen enimmäisaika tuli täyteen ja äänitys keskeytettiin automaattisesti. Kiitos lahjoituksesta!</value></data>
+    <data name="AlertDismissOk"><value>OK</value></data>
+
+</root>

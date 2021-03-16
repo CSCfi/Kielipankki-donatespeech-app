@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resources="clr-namespace:Recorder.ResX"
+             xmlns:app="clr-namespace:Recorder"
+             xmlns:effects="clr-namespace:Recorder.Effects"
+             xmlns:local="clr-namespace:Recorder.Converters"
+             x:Class="Recorder.ScheduleStartPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:BoolNegationConverter x:Key="boolNegation"/>
+            <local:StringToImageSourceConverter x:Key="stringToImageSource"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>    
+
+    <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <ActivityIndicator VerticalOptions="CenterAndExpand"
+                           IsVisible="{Binding IsLoading}"
+                           IsRunning="True"
+                           Margin="20"
+                           Scale="1.5"
+                           Grid.Row="1" />
+
+        <ScrollView HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    Padding="0,0,0,50"
+                    IsVisible="{Binding IsLoading, Converter={StaticResource boolNegation}}"
+                    Grid.Row="1">
+            <StackLayout Orientation="Vertical">
+
+                <Image x:Name="startImage"
+                       Source="{Binding ImageUrl, Converter={StaticResource stringToImageSource}}"
+                       Aspect="AspectFill"/>
+
+                <StackLayout Orientation="Vertical"
+                             Margin="20"
+                             VerticalOptions="FillAndExpand">
+
+                    <Label Text="{Binding Title}"
+                           Style="{StaticResource PageTitleStyle}" />
+
+                    <Label Text="{Binding Body1}"
+                           Style="{StaticResource BodyTextStyle}"/>
+
+                    <Label Text="{Binding Body2}"
+                           Style="{StaticResource BodyTextStyle}" />
+
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+
+        <AbsoluteLayout VerticalOptions="Fill"
+                        HorizontalOptions="Fill"
+                        Margin="0,-50,0,0"
+                        IsVisible="{Binding IsLoading, Converter={StaticResource boolNegation}}"
+                        Grid.Row="2">
+            <StackLayout Orientation="Horizontal" Spacing="0" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                <Image Source="bottombar_notch_left"
+                       HeightRequest="1"
+                       WidthRequest="60"
+                       VerticalOptions="FillAndExpand"
+                       InputTransparent="True"
+                       AutomationProperties.IsInAccessibleTree="False" />
+                <Image Source="bottombar_notch_flex"
+                       HeightRequest="1"
+                       VerticalOptions="FillAndExpand"
+                       HorizontalOptions="FillAndExpand"
+                       MinimumHeightRequest="1"
+                       AutomationProperties.IsInAccessibleTree="False" />
+                <Image Source="bottombar_notch_right"
+                       HeightRequest="1"
+                       WidthRequest="60"
+                       VerticalOptions="FillAndExpand"
+                       InputTransparent="True"
+                       AutomationProperties.IsInAccessibleTree="False" />
+            </StackLayout>
+
+            <StackLayout AbsoluteLayout.LayoutBounds="0,16,1,-1"
+                         AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"
+                         Orientation="Horizontal"
+                         Padding="24,16,24,12"
+                         effects:SafeAreaInsetEffect.Insets="Bottom">
+
+                <Button Text="{x:Static resources:AppResources.StartButtonText}"
+                        Clicked="StartButtonClickedAsync"
+                        HorizontalOptions="CenterAndExpand"
+                        WidthRequest="230"
+                        AutomationId="ScheduleStartButton"/>
+
+            </StackLayout>
+        </AbsoluteLayout>
+
+        <app:NavigationBarView />
+    </Grid>
+</ContentPage>

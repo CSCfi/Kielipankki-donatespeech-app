@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:effects="clr-namespace:Recorder.Effects;assembly=Recorder"
+    xmlns:resources="clr-namespace:Recorder.ResX"
+    xmlns:app="clr-namespace:Recorder"
+    xmlns:conv="clr-namespace:Recorder.Converters"
+    xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    mc:Ignorable="d"
+    x:Class="Recorder.ThemesPage"
+    x:Name="this">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <conv:UpperCaseConverter x:Key="toUpper"/>
+
+            <Style x:Key="ThemeImageBorderStyle" TargetType="Frame">
+                <Setter Property="CornerRadius" Value="18"/> <!-- slightly larger than image radius -->
+                <Setter Property="Padding" Value="3"/> <!-- border width -->
+                <Setter Property="BackgroundColor" Value="{StaticResource ThemeImageBorderColor}"/>
+                <Setter Property="HasShadow" Value="False"/>
+            </Style>
+
+            <Style x:Key="ThemeLabelStyle" TargetType="Label">
+                <Setter Property="FontSize">
+                    <Setter.Value>
+                        <app:PlatformFontSize iOS="Body" Android="18.0"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="TextColor" Value="{StaticResource OnFirstColor}"/>
+            </Style>
+
+            <DataTemplate x:Key="themeListItemTemplate">
+                <ViewCell>
+                    <ContentView ios:VisualElement.IsShadowEnabled="true"
+                                 ios:VisualElement.ShadowColor="Black"
+                                 ios:VisualElement.ShadowOpacity="0.3"
+                                 ios:VisualElement.ShadowRadius="3">
+                        <ios:VisualElement.ShadowOffset>
+                            <Size>
+                                <x:Arguments>
+                                    <x:Double>0</x:Double>
+                                    <x:Double>2</x:Double>
+                                </x:Arguments>
+                            </Size>
+                        </ios:VisualElement.ShadowOffset>
+
+                    <StackLayout Orientation="Horizontal"
+                                 BackgroundColor="{Binding ButtonBackgroundColor}"
+                                 Margin="20,8"
+                                 Padding="8"
+                                 effects:RoundedCornersEffect.CornerRadius="25"
+                                 AutomationId="{Binding TestId}"
+                                 android:VisualElement.Elevation="4">
+
+                        <Frame Style="{StaticResource ThemeImageBorderStyle}"
+                               VerticalOptions="Center">
+                            <Image Source="{Binding ImageUrl}"
+                                   Aspect="AspectFill"
+                                   WidthRequest="62"
+                                   HeightRequest="62"
+                                   effects:RoundedCornersEffect.CornerRadius="16"
+                                   AutomationProperties.IsInAccessibleTree="False" />                            
+                        </Frame>
+
+                        <Label Text="{Binding Title, Converter={StaticResource toUpper}}"
+                               Style="{StaticResource ThemeLabelStyle}"
+                               Margin="10,0"
+                               HorizontalTextAlignment="Start"
+                               VerticalTextAlignment="Center"
+                               VerticalOptions="Fill" />
+                    </StackLayout>
+                    </ContentView>
+                </ViewCell>
+            </DataTemplate>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <ListView x:Name="themeListView"
+                  BackgroundColor="{StaticResource AppBackgroundColor}"
+                  SeparatorVisibility="None"
+                  ItemTemplate="{StaticResource themeListItemTemplate}"
+                  ItemsSource="{Binding ThemeModels}"
+                  RowHeight="100"
+                  VerticalOptions="FillAndExpand"
+                  HorizontalOptions="FillAndExpand"
+                  ItemSelected="OnItemSelected"
+                  AutomationId="ThemeListView"
+                  Grid.Row="1">
+            <ListView.Header>
+                <StackLayout Orientation="Vertical" Padding="20,36,20,20" HorizontalOptions="FillAndExpand" Spacing="10">
+                    <Label x:Name="ThemesPageTitleTextLabel"
+                            Style="{StaticResource PageTitleStyle}"
+                            Text="{x:Static resources:AppResources.ThemesPageTitleText}"
+                            HorizontalOptions="Center" />
+
+                    <Label x:Name="ThemesPageBody1TextLabel"
+                            Style="{StaticResource BodyTextStyle}"
+                            Text="{x:Static resources:AppResources.ThemesPageBody1Text}"
+                            HorizontalOptions="Center" />
+
+                    <ActivityIndicator IsVisible="{Binding IsLoading}"
+                                        IsRunning="True" Margin="20" Scale="1.5"/>
+                </StackLayout>
+            </ListView.Header>
+            <ListView.Footer>
+                <ContentView effects:SafeAreaInsetEffect.Insets="Bottom" />
+            </ListView.Footer>
+        </ListView>
+
+        <app:NavigationBarView x:Name="navigationBarView"
+                               ButtonType="Text"
+                               ButtonText="{x:Static resources:AppResources.DetailsButtonText}"
+                               ButtonCommand="{Binding ShowDetailsCommand, Source={x:Reference this}}" />
+
+    </Grid>
+</ContentPage>

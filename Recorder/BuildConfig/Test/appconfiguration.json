@@ -1,0 +1,6 @@
+﻿{
+  "RecorderApiUrl": "https://endpoint.dev.example.com/v1",
+  "RecorderApiKey": "recorder-api-key",
+  "MaxRecordingMinutes": 10,
+  "BuildType": "test"
+}

@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Recorder.NavigationBarView"
+    xmlns:app="clr-namespace:Recorder"
+    xmlns:effects="clr-namespace:Recorder.Effects"  
+    xmlns:recorder="clr-namespace:Recorder"  
+    xmlns:r="clr-namespace:Recorder.ResX"
+    xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    x:Name="this">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Button" x:Key="navigationTextButtonStyle" BaseResourceKey="textButtonStyle">
+                <Setter Property="TextColor" Value="{StaticResource SecondColor}" />
+                <Setter Property="FontSize" Value="Small" />
+                <Setter Property="ContentLayout" Value="6" />
+            </Style>
+
+            <Style x:Key="RecordedMinutesLabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource RecordedMinutesTextColor}" />
+                <Setter Property="FontSize">
+                    <Setter.Value>
+                        <app:PlatformFontSize iOS="Medium" Android="16.0">
+                            <app:PlatformFontSize.iOSFontScale>
+                                <app:ResponsiveStyleProp x:TypeArguments="x:Double" Normal="1" Medium="1" Large="1.125" />
+                            </app:PlatformFontSize.iOSFontScale>
+                            <app:PlatformFontSize.AndroidFontScale>
+                                <app:ResponsiveStyleProp x:TypeArguments="x:Double" Normal="1" Medium="1" Large="1.125" />
+                            </app:PlatformFontSize.AndroidFontScale>
+                        </app:PlatformFontSize>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="LineHeight" Value="1.1" /> <!-- vertical adjustment in ios -->
+                <Setter Property="Padding" Value="0" /> <!-- text is a number so no need for font clip fix -->
+            </Style>
+
+            <Style x:Key="DonatedLabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource NormalTextColor}" />
+                <Setter Property="LineHeight" Value="1.2" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="FontSize">
+                    <Setter.Value>
+                        <app:PlatformFontSize iOS="Micro" Android="11.0">
+                            <app:PlatformFontSize.iOSFontScale>
+                                <app:ResponsiveStyleProp x:TypeArguments="x:Double" Normal="1" Medium="1" Large="1.0909" />
+                            </app:PlatformFontSize.iOSFontScale>
+                            <app:PlatformFontSize.AndroidFontScale>
+                                <app:ResponsiveStyleProp x:TypeArguments="x:Double" Normal="1" Medium="1" Large="1.0909" />
+                            </app:PlatformFontSize.AndroidFontScale>
+                        </app:PlatformFontSize>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+        </ResourceDictionary>
+    </ContentView.Resources>
+
+    <StackLayout Orientation="Horizontal"
+                 BackgroundColor="{StaticResource NavigationBarBackgroundColor}"
+                 effects:SafeAreaInsetEffect.Insets="Top"
+                 ios:VisualElement.IsShadowEnabled="true"
+                 ios:VisualElement.ShadowColor="Black"
+                 ios:VisualElement.ShadowOpacity="0.2"
+                 ios:VisualElement.ShadowRadius="3"
+                 android:VisualElement.Elevation="4">
+
+        <ios:VisualElement.ShadowOffset>
+            <Size>
+                <x:Arguments>
+                    <x:Double>0</x:Double>
+                    <x:Double>2</x:Double>
+                </x:Arguments>
+            </Size>
+        </ios:VisualElement.ShadowOffset>
+
+        <Button Style="{StaticResource navigationTextButtonStyle}"
+                VerticalOptions="Center"
+                BindingContext="{Binding Source={x:Reference this}}"
+                Command="{Binding ButtonCommand}"
+                Text="{Binding ButtonText}"
+                Margin="12,0,0,0">
+
+            <Button.Triggers>
+                <DataTrigger TargetType="Button" Binding="{Binding ButtonType}" Value="Close">
+                    <Setter Property="Margin" Value="4,0,0,0" />
+                    <Setter Property="ImageSource" Value="icon_cross" />
+                </DataTrigger>
+
+                <DataTrigger TargetType="Button" Binding="{Binding ButtonType}" Value="Back">
+                    <Setter Property="Margin" Value="4,0,0,0" />
+                    <Setter Property="ImageSource" Value="icon_cross" />
+                </DataTrigger>
+            </Button.Triggers>
+        </Button>
+
+        <StackLayout Orientation="Vertical"
+                     VerticalOptions="Center"
+                     HorizontalOptions="FillAndExpand"
+                     Spacing="0"
+                     Margin="0,5,20,0">
+
+            <Label HorizontalOptions="End"
+                   Style="{StaticResource DonatedLabelStyle}"
+                   Text="{x:Static r:AppResources.DonatedLabelText}" />
+
+            <Label HorizontalOptions="End"
+                   Style="{StaticResource RecordedMinutesLabelStyle}"
+                   Text="{Binding TotalRecordedMinutes}"
+                   x:Name="recordedMinutesLabel" />
+        </StackLayout>
+    </StackLayout>
+</ContentView>

@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B4EB8E32-C850-4293-8050-C42C57C15954}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TemplateGuid>{6143fdea-f3c2-4a09-aafa-6e230626515e}</TemplateGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Recorder.iOS</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>Recorder.iOS</AssemblyName>
+    <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
+    <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
+    <ReleaseVersion>2020.4</ReleaseVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchLink>None</MtouchLink>
+    <MtouchDebug>true</MtouchDebug>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+<CodesignKey>iPhone Developer</CodesignKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>ARM64</MtouchArch>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>None</MtouchLink>
+    <MtouchInterpreter>-all</MtouchInterpreter>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>ARM64</MtouchArch>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
+<MtouchExtraArgs>--optimize=experimental-xforms-product-type</MtouchExtraArgs>
+<MtouchUseLlvm>true</MtouchUseLlvm>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Test|AnyCPU' ">
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Test</OutputPath>
+    <DefineConstants></DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchVerbosity></MtouchVerbosity>
+    <MtouchEnableSGenConc>false</MtouchEnableSGenConc>
+    <MtouchLink></MtouchLink>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Test|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Test</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>ARM64</MtouchArch>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Test|iPhoneSimulator' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Test</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <None Include="Entitlements.plist" />
+    <None Include="Info.plist" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AudioRecorder.cs" />
+    <Compile Include="FirebaseAnalyticsEventTrackeriOS.cs" />
+    <Compile Include="VideoPlayerRenderer.cs" />
+    <Compile Include="RoundedCornersEffectiOS.cs" />
+    <Compile Include="RecorderButtonRenderer.cs" />
+    <Compile Include="CustomImageRenderer.cs" />
+    <Compile Include="SafeAreaInsetEffectiOS.cs" />
+    <Compile Include="PermissionRequestInfo.cs" />
+    <Compile Include="CustomScrollViewRenderer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1534" />
+    <PackageReference Include="Xamarin.TestCloud.Agent" Version="0.21.9" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+    <PackageReference Include="Xamarin.Firebase.iOS.Analytics">
+      <Version>6.4.1</Version>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\Recorder\Recorder.csproj">
+      <Project>{E92667FE-2E88-44B5-8817-358AF74FD59D}</Project>
+      <Name>Recorder</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appicon-40w.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appicon-60w.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appicon-58w.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appicon-87w.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appicon-80w.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appicon-120w.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appicon-180w.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appicon-20w.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appicon-29w.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appicon-76w.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appicon-152w.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appicon-167w.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appicon-1024w.png" />
+    <ImageAsset Include="Assets.xcassets\icon_cross.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\icon_cross.imageset\icon-cross%402x-1.png" />
+    <ImageAsset Include="Assets.xcassets\icon_cross.imageset\icon-cross%403x-1.png" />
+    <ImageAsset Include="Assets.xcassets\icon_cross.imageset\icon-cross-1.png" />
+    <ImageAsset Include="Assets.xcassets\logo.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\logo.imageset\logo.png" />
+    <ImageAsset Include="Assets.xcassets\logo.imageset\logo%402x.png" />
+    <ImageAsset Include="Assets.xcassets\logo.imageset\logo%403x.png" />
+    <ImageAsset Include="Assets.xcassets\arrow_down.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\arrow_down.imageset\arrow_down.png" />
+    <ImageAsset Include="Assets.xcassets\arrow_down.imageset\arrow_down%402x.png" />
+    <ImageAsset Include="Assets.xcassets\arrow_down.imageset\arrow_down%403x.png" />
+    <ImageAsset Include="Assets.xcassets\bottombar_flex.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\bottombar_left.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\bottombar_right.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\bottombar_right.imageset\bottombar_right.png" />
+    <ImageAsset Include="Assets.xcassets\bottombar_right.imageset\bottombar_right%402x.png" />
+    <ImageAsset Include="Assets.xcassets\bottombar_right.imageset\bottombar_right%403x.png" />
+    <ImageAsset Include="Assets.xcassets\bottombar_left.imageset\bottombar_left.png" />
+    <ImageAsset Include="Assets.xcassets\bottombar_left.imageset\bottombar_left%402x.png" />
+    <ImageAsset Include="Assets.xcassets\bottombar_left.imageset\bottombar_left%403x.png" />
+    <ImageAsset Include="Assets.xcassets\bottombar_flex.imageset\bottombar_flex.png" />
+    <ImageAsset Include="Assets.xcassets\bottombar_flex.imageset\bottombar_flex%402x.png" />
+    <ImageAsset Include="Assets.xcassets\bottombar_flex.imageset\bottombar_flex%403x.png" />
+    <ImageAsset Include="Assets.xcassets\bottombar_notch_left.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\bottombar_notch_right.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\bottombar_notch_flex.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\bottombar_notch_left.imageset\bottombar_notch_left.png" />
+    <ImageAsset Include="Assets.xcassets\bottombar_notch_left.imageset\bottombar_notch_left%402x.png" />
+    <ImageAsset Include="Assets.xcassets\bottombar_notch_left.imageset\bottombar_notch_left%403x.png" />
+    <ImageAsset Include="Assets.xcassets\bottombar_notch_right.imageset\bottombar_notch_right.png" />
+    <ImageAsset Include="Assets.xcassets\bottombar_notch_right.imageset\bottombar_notch_right%402x.png" />
+    <ImageAsset Include="Assets.xcassets\bottombar_notch_right.imageset\bottombar_notch_right%403x.png" />
+    <ImageAsset Include="Assets.xcassets\bottombar_notch_flex.imageset\bottombar_notch_flex.png" />
+    <ImageAsset Include="Assets.xcassets\bottombar_notch_flex.imageset\bottombar_notch_flex%402x.png" />
+    <ImageAsset Include="Assets.xcassets\bottombar_notch_flex.imageset\bottombar_notch_flex%403x.png" />
+    <ImageAsset Include="Assets.xcassets\icon_back.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\icon_back.imageset\icon-back.png" />
+    <ImageAsset Include="Assets.xcassets\icon_back.imageset\icon-back%402x.png" />
+    <ImageAsset Include="Assets.xcassets\icon_back.imageset\icon-back%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets.xcassets\icon-cross.imageset\" />
+    <Folder Include="Assets.xcassets\icon_cross.imageset\" />
+    <Folder Include="Assets.xcassets\logo.imageset\" />
+    <Folder Include="Assets.xcassets\arrow_down.imageset\" />
+    <Folder Include="Assets.xcassets\arrow_small.imageset\" />
+    <Folder Include="Assets.xcassets\bottombar_flex.imageset\" />
+    <Folder Include="Assets.xcassets\bottombar_left.imageset\" />
+    <Folder Include="Assets.xcassets\bottombar_right.imageset\" />
+    <Folder Include="Assets.xcassets\bottombar_notch_left.imageset\" />
+    <Folder Include="Assets.xcassets\bottombar_notch_right.imageset\" />
+    <Folder Include="Assets.xcassets\bottombar_notch_flex.imageset\" />
+    <Folder Include="Assets.xcassets\icon_back.imageset\" />
+    <Folder Include="Assets.xcassets\hello.imageset\" />
+  </ItemGroup>
+</Project>

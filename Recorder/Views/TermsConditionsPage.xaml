@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:effects="clr-namespace:Recorder.Effects"
+             xmlns:app="clr-namespace:Recorder"
+             xmlns:r="clr-namespace:Recorder.ResX"
+             xmlns:system="clr-namespace:System;assembly=netstandard"
+             x:Class="Recorder.Views.TermsConditionsPage">
+
+    <ContentPage.Resources>
+        <Style TargetType="Label" BaseResourceKey="BodyTextStyle">
+            <Setter Property="HorizontalTextAlignment" Value="Start" />
+            <Setter Property="Margin" Value="0,0,0,10" />
+            <Setter Property="LineHeight" Value="1.25" />
+        </Style>
+
+        <Style x:Key="HelloBodyStyle" TargetType="Label" BaseResourceKey="BodyTextStyle">
+            <Setter Property="HorizontalTextAlignment" Value="Start" />
+            <Setter Property="Margin" Value="0,0,0,10" />
+            <Setter Property="LineHeight" Value="1.25" />
+        </Style>
+
+        <Style x:Key="TermsTitleStyle" TargetType="Label" BaseResourceKey="PageTitleStyle">
+            <Setter Property="Margin" Value="0,10,0,0" />
+            <Setter Property="HorizontalTextAlignment" Value="Start" />
+            <Setter Property="FontSize">
+                <Setter.Value>
+                    <app:PlatformFontSize iOS="Title" iOSFontScale="0.93" Android="26.0"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <StackLayout Orientation="Vertical" Padding="20,20,20,20" effects:SafeAreaInsetEffect.Insets="Top,Bottom" effects:SafeAreaInsetEffect.InsetModifier="0,0,0,-10">
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="{x:Static r:AppResources.TermsHelloTitle}"
+                       Style="{StaticResource TermsTitleStyle}"
+                       HorizontalOptions="FillAndExpand"
+                       VerticalOptions="End"/>
+
+            </StackLayout>
+            <Label Text="{x:Static r:AppResources.TermsHelloBody}" Style="{StaticResource HelloBodyStyle}"/>
+
+            <Label Text="{x:Static r:AppResources.TermsGeneralTitle}" Style="{StaticResource TermsTitleStyle}"/>
+            <Label Text="{x:Static r:AppResources.TermsGeneralBody}" />
+
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="{x:Static r:AppResources.TermsGeneralLink}"
+                              Style="{StaticResource InlineLinkLabel}">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding TapLinkCommand}"
+                                                      CommandParameter="{x:Static r:AppResources.TermsGeneralUrl}"/>
+                            </Span.GestureRecognizers>
+                        </Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Label Text="{x:Static r:AppResources.TermsOwnershipTitle}" Style="{StaticResource TermsTitleStyle}"/>
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="{x:Static r:AppResources.TermsOwnershipBody1}" />
+                        <Span Text="{x:Static r:AppResources.TermsOwnershipLink}"
+                              Style="{StaticResource InlineLinkLabel}">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding TapLinkCommand}"
+                                                      CommandParameter="{x:Static r:AppResources.TermsOwnershipLinkUrl}"/>
+                            </Span.GestureRecognizers>
+                        </Span>
+                        <Span Text="{x:Static r:AppResources.TermsOwnershipBody2}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Label Text="{x:Static r:AppResources.TermsVoluntaryTitle}" Style="{StaticResource TermsTitleStyle}"/>
+            <Label Text="{x:Static r:AppResources.TermsVoluntaryBody}"/>
+
+            <Label Text="{x:Static r:AppResources.TermsPrivacyTitle}" Style="{StaticResource TermsTitleStyle}"/>
+            <Label Text="{x:Static r:AppResources.TermsPrivacyBody}"/>
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="{x:Static r:AppResources.TermsPrivacyLink}"
+                              Style="{StaticResource InlineLinkLabel}">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding TapLinkCommand}"
+                                                      CommandParameter="{x:Static r:AppResources.TermsPrivacyUrl}"/>
+                            </Span.GestureRecognizers>
+                        </Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Label Text="{x:Static r:AppResources.TermsRightsTitle}" Style="{StaticResource TermsTitleStyle}"/>
+            <Label Text="{x:Static r:AppResources.TermsRightsBody}"/>
+
+            <Label Text="{x:Static r:AppResources.TermsAppropriateUseTitle}" Style="{StaticResource TermsTitleStyle}"/>
+            <Label Text="{x:Static r:AppResources.TermsAppropriateUseBody}"/>
+
+            <Label Text="{x:Static r:AppResources.TermsAdditionalTitle}" Style="{StaticResource TermsTitleStyle}"/>
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="{x:Static r:AppResources.TermsAdditionalWebsite}" LineHeight="1.333"/>
+                        <Span Text="{x:Static r:AppResources.TermsAdditionalWebsiteLink}"
+                              Style="{StaticResource InlineLinkLabel}"
+                              LineHeight="1.333">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding TapLinkCommand}"
+                                                      CommandParameter="{x:Static r:AppResources.TermsAdditionalWebsiteUrl}"/>
+                            </Span.GestureRecognizers>
+                        </Span>
+                        <Span Text="{x:Static system:Environment.NewLine}" />
+                        <Span Text="{x:Static r:AppResources.TermsAdditionalContact}" LineHeight="1.333"/>
+                        <Span Text="{x:Static system:Environment.NewLine}" />
+                        <Span Text="{x:Static r:AppResources.TermsAdditionalLink}"
+                              Style="{StaticResource InlineLinkLabel}"
+                              LineHeight="1.333">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding TapLinkCommand}"
+                                                      CommandParameter="{x:Static r:AppResources.TermsAdditionalUrl}"/>
+                            </Span.GestureRecognizers>
+                        </Span>
+                        <Span Text="{x:Static system:Environment.NewLine}" />
+                        <Span Text="{x:Static r:AppResources.TermsAdditionalEmail}"
+                              Style="{StaticResource InlineLinkLabel}"
+                              LineHeight="1.333">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding TapEmailCommand}"
+                                                      CommandParameter="{x:Static r:AppResources.TermsAdditionalEmail}"/>
+                            </Span.GestureRecognizers>
+                        </Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Label Text="{x:Static r:AppResources.TermsAcceptBody}"
+                   HorizontalTextAlignment="Center"
+                   Margin="0,15,0,0" />
+
+            <Button x:Name="acceptButton"
+                    Text="{x:Static r:AppResources.TermsAccept}"
+                    WidthRequest="230"
+                    Margin="30,20,30,0"/>
+
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

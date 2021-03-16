@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:app="clr-namespace:Recorder"
+             xmlns:effects="clr-namespace:Recorder.Effects"
+             xmlns:resources="clr-namespace:Recorder.ResX"
+             x:Class="Recorder.DetailsPage">
+    <ContentPage.Resources>
+        <Style TargetType="Label" x:Key="DetailsTitleStyle" BaseResourceKey="PageTitleStyle">
+            <Setter Property="HorizontalTextAlignment" Value="Start" />
+            <Setter Property="Margin" Value="0,30,0,0" />
+        </Style>
+
+        <Style TargetType="Label" x:Key="DetailsBodyStyle" BaseResourceKey="BodyTextStyle">
+            <Setter Property="HorizontalTextAlignment" Value="Start" />
+            <Setter Property="Margin" Value="0,10,0,0" /> 
+        </Style>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <ScrollView VerticalOptions="FillAndExpand" effects:SafeAreaInsetEffect.Insets="Bottom" Grid.Row="1">
+                <StackLayout Orientation="Vertical" Margin="16,0">
+                    <Label Text="{x:Static resources:AppResources.DetailsGeneralTitle}"
+                           Style="{StaticResource DetailsTitleStyle}" />
+
+                    <Label Text="{x:Static resources:AppResources.DetailsGeneralBody}"
+                           Style="{StaticResource DetailsBodyStyle}" />
+
+                    <Label Style="{StaticResource DetailsBodyStyle}">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{x:Static resources:AppResources.DetailsGeneralLinkTitle}"
+                                      Style="{StaticResource InlineLinkLabel}">
+                                    <Span.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding TapLinkCommand}"
+                                                              CommandParameter="{x:Static resources:AppResources.TermsGeneralUrl}" />
+                                    </Span.GestureRecognizers>
+                                </Span>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <Label Text="{x:Static resources:AppResources.DetailsPrivacyTitle}"
+                           Style="{StaticResource DetailsTitleStyle}" />
+
+                    <Label Text="{x:Static resources:AppResources.DetailsPrivacyBody}"
+                           Style="{StaticResource DetailsBodyStyle}"/>
+
+                    <Label Style="{StaticResource DetailsBodyStyle}">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{x:Static resources:AppResources.DetailsPrivacyLinkTitle}"
+                                      Style="{StaticResource InlineLinkLabel}">
+                                    <Span.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding TapLinkCommand}"
+                                                              CommandParameter="{x:Static resources:AppResources.TermsPrivacyUrl}" />
+                                    </Span.GestureRecognizers>
+                                </Span>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <Label Text="{x:Static resources:AppResources.DetailsRemoveTitle}"
+                           Style="{StaticResource DetailsTitleStyle}" />
+
+                    <Label Style="{StaticResource DetailsBodyStyle}">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{x:Static resources:AppResources.DetailsRemoveBody1}" />
+                                <Span Text="{x:Static resources:AppResources.DetailsRemoveEmail}"
+                                      Style="{StaticResource InlineLinkLabel}">
+                                    <Span.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding TapEmailCommand}"
+                                                              CommandParameter="{x:Static resources:AppResources.DetailsRemoveEmailLink}" />
+                                    </Span.GestureRecognizers>
+                                </Span>
+                                <Span Text="{x:Static resources:AppResources.DetailsRemoveBody2}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <Label Text="{Binding ClientId}"
+                           Style="{StaticResource DetailsBodyStyle}"
+                           FontSize="Large" />
+
+                    <Button Text="{x:Static resources:AppResources.DetailsRemoveButtonTitle}"
+                            WidthRequest="230"
+                            Margin="0,30,0,0"
+                            x:Name="CopyClientIdButton"
+                            Clicked="CopyClientId_Clicked" />
+
+                    <Label Text="{x:Static resources:AppResources.DetailsRemoveButtonMessage}"
+                           FontSize="Small"
+                           Margin="0,10,0,20"/>
+                </StackLayout>
+            </ScrollView>
+
+            <app:NavigationBarView ButtonType="Close" ButtonText="{x:Static resources:AppResources.CloseButtonText}" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

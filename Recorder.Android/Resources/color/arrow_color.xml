@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- darker shade for pressed button state -->
+    <item android:state_pressed="true" android:color="#ff99d6ff"/>
+    <item android:color="#ff009bff"/> 
+</selector>

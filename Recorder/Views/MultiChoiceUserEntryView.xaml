@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:r="clr-namespace:Recorder.ResX"
+             x:Class="Recorder.Views.MultiChoiceUserEntryView">
+
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label" BasedOn="{StaticResource BodyTextStyle}">
+                <Setter Property="HorizontalTextAlignment" Value="Start" />
+                <Setter Property="Margin" Value="4,0,0,0" /> <!-- left margin to align with entry -->
+            </Style>
+        </ResourceDictionary>
+    </ContentView.Resources>    
+
+    <StackLayout Orientation="Vertical" Margin="30,10" Spacing="0">
+
+        <Picker x:Name="picker"
+                Title="{x:Static r:AppResources.ChooseOptionText}"
+                ItemsSource="{Binding ChoiceOptions}"
+                Margin="0,0,0,20"/>
+
+        <Label Text="{Binding OtherEntryLabel}" />
+        <Entry x:Name="otherEntry"/>
+
+    </StackLayout>
+</ContentView>
